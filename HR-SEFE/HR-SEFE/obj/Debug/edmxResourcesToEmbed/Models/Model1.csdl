@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="kullanici" />
+    </Key>
+    <Property Name="kullanici" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="basvuru">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dogumtarihi" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="uyruk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cinsiyet" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="adres" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="okul" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="bolum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="notort" Type="Double" Nullable="false" />
+    <Property Name="stajzorun" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="stajtur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="stajsure" Type="Int32" Nullable="false" />
+    <Property Name="sgtrdurum" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="refvar" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="refadsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="refbolum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="refmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="reftel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="secilen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="basvurusecilen" Relationship="Self.FK_basvurusecilen_basvuru" FromRole="basvuru" ToRole="basvurusecilen" />
+  </EntityType>
+  <EntityType Name="basvurusecilen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dogumtarihi" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="uyruk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cinsiyet" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="adres" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="okul" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="bolum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="notort" Type="Double" Nullable="false" />
+    <Property Name="stajzorun" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="stajtur" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="stajsure" Type="Int32" Nullable="false" />
+    <Property Name="sgtrdurum" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="refvar" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="refadsoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="refbolum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="refmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="reftel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="secilen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="basvuru" Relationship="Self.FK_basvurusecilen_basvuru" FromRole="basvurusecilen" ToRole="basvuru" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_basvurusecilen_basvuru">
+    <End Role="basvuru" Type="Self.basvuru" Multiplicity="1" />
+    <End Role="basvurusecilen" Type="Self.basvurusecilen" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="basvuru">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="basvurusecilen">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HREntities10" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="admin" EntityType="Self.admin" />
+    <EntitySet Name="basvuru" EntityType="Self.basvuru" />
+    <EntitySet Name="basvurusecilen" EntityType="Self.basvurusecilen" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_basvurusecilen_basvuru" Association="Self.FK_basvurusecilen_basvuru">
+      <End Role="basvuru" EntitySet="basvuru" />
+      <End Role="basvurusecilen" EntitySet="basvurusecilen" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

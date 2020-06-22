@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HRModelStoreContainer" CdmEntityContainer="HREntities10">
+    <EntitySetMapping Name="admin">
+      <EntityTypeMapping TypeName="HRModel.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="kullanici" ColumnName="kullanici" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="basvuru">
+      <EntityTypeMapping TypeName="HRModel.basvuru">
+        <MappingFragment StoreEntitySet="basvuru">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="adsoyad" ColumnName="adsoyad" />
+          <ScalarProperty Name="dogumtarihi" ColumnName="dogumtarihi" />
+          <ScalarProperty Name="uyruk" ColumnName="uyruk" />
+          <ScalarProperty Name="tc" ColumnName="tc" />
+          <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="okul" ColumnName="okul" />
+          <ScalarProperty Name="bolum" ColumnName="bolum" />
+          <ScalarProperty Name="notort" ColumnName="notort" />
+          <ScalarProperty Name="stajzorun" ColumnName="stajzorun" />
+          <ScalarProperty Name="stajtur" ColumnName="stajtur" />
+          <ScalarProperty Name="stajsure" ColumnName="stajsure" />
+          <ScalarProperty Name="sgtrdurum" ColumnName="sgtrdurum" />
+          <ScalarProperty Name="refvar" ColumnName="refvar" />
+          <ScalarProperty Name="refadsoyad" ColumnName="refadsoyad" />
+          <ScalarProperty Name="refbolum" ColumnName="refbolum" />
+          <ScalarProperty Name="refmail" ColumnName="refmail" />
+          <ScalarProperty Name="reftel" ColumnName="reftel" />
+          <ScalarProperty Name="secilen" ColumnName="secilen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="basvurusecilen">
+      <EntityTypeMapping TypeName="HRModel.basvurusecilen">
+        <MappingFragment StoreEntitySet="basvurusecilen">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="adsoyad" ColumnName="adsoyad" />
+          <ScalarProperty Name="dogumtarihi" ColumnName="dogumtarihi" />
+          <ScalarProperty Name="uyruk" ColumnName="uyruk" />
+          <ScalarProperty Name="tc" ColumnName="tc" />
+          <ScalarProperty Name="cinsiyet" ColumnName="cinsiyet" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="adres" ColumnName="adres" />
+          <ScalarProperty Name="okul" ColumnName="okul" />
+          <ScalarProperty Name="bolum" ColumnName="bolum" />
+          <ScalarProperty Name="notort" ColumnName="notort" />
+          <ScalarProperty Name="stajzorun" ColumnName="stajzorun" />
+          <ScalarProperty Name="stajtur" ColumnName="stajtur" />
+          <ScalarProperty Name="stajsure" ColumnName="stajsure" />
+          <ScalarProperty Name="sgtrdurum" ColumnName="sgtrdurum" />
+          <ScalarProperty Name="refvar" ColumnName="refvar" />
+          <ScalarProperty Name="refadsoyad" ColumnName="refadsoyad" />
+          <ScalarProperty Name="refbolum" ColumnName="refbolum" />
+          <ScalarProperty Name="refmail" ColumnName="refmail" />
+          <ScalarProperty Name="reftel" ColumnName="reftel" />
+          <ScalarProperty Name="secilen" ColumnName="secilen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HRModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

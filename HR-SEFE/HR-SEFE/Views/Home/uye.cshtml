@@ -1,0 +1,52 @@
+﻿@model HR_SEFE.Models.admin
+
+@{
+    ViewBag.Title = "admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>GİRİŞ</h1>
+
+
+<section id="loginForm">
+    <h2>@ViewBag.Msg</h2>
+    @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+       
+        <fieldset class="col-md-4 col-md-offset-4">
+            <legend>KULLANICI BİLGİLERİ</legend>
+            <ol style="list-style:none">
+                <li>
+                    <div class="form-group">
+                        <p>Kullanıcı Ad:</p>
+
+                        @Html.TextBoxFor(m => m.kullanici, new { @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(m => m.kullanici)
+                    </div>
+                </li>
+
+                <br />
+
+                <li>
+                    <p>Şifre:</p>
+
+                    @Html.PasswordFor(m => m.sifre,new { @class = "form-control input-sm" })
+                    @Html.ValidationMessageFor(m => m.sifre)
+                </li>
+            </ol>
+            <a href ="/Home/basvurukontol"  >
+     <div class="submit-contact default-submit">
+           <input type="submit" value="GİRİŞ" />
+           </div>
+ </a>
+        </fieldset>
+        <p>
+        </p>
+    }
+</section>
+
+}
+

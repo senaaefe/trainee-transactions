@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HRModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="kullanici" />
+    </Key>
+    <Property Name="kullanici" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="basvuru">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adsoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dogumtarihi" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="uyruk" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tc" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="cinsiyet" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tel" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="adres" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="okul" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="bolum" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="notort" Type="float" Nullable="false" />
+    <Property Name="stajzorun" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="stajtur" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="stajsure" Type="int" Nullable="false" />
+    <Property Name="sgtrdurum" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="refvar" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="refadsoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="refbolum" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="refmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="reftel" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="secilen" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="basvurusecilen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adsoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dogumtarihi" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="uyruk" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tc" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="cinsiyet" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tel" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="adres" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="okul" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="bolum" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="notort" Type="float" Nullable="false" />
+    <Property Name="stajzorun" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="stajtur" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="stajsure" Type="int" Nullable="false" />
+    <Property Name="sgtrdurum" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="refvar" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="refadsoyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="refbolum" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="refmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="reftel" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="secilen" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_basvurusecilen_basvuru">
+    <End Role="basvuru" Type="Self.basvuru" Multiplicity="1" />
+    <End Role="basvurusecilen" Type="Self.basvurusecilen" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="basvuru">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="basvurusecilen">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HRModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="basvuru" EntityType="Self.basvuru" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="basvurusecilen" EntityType="Self.basvurusecilen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_basvurusecilen_basvuru" Association="Self.FK_basvurusecilen_basvuru">
+      <End Role="basvuru" EntitySet="basvuru" />
+      <End Role="basvurusecilen" EntitySet="basvurusecilen" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

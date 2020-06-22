@@ -1,0 +1,190 @@
+﻿@model HR_SEFE.Models.basvuru
+
+
+@{
+    ViewBag.Title = "kisi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>BAŞVURU</h1>
+<h2>KİŞİSEL BİLGİLER</h2>
+@using (Html.BeginForm("kisi", "Home", FormMethod.Post))
+
+{
+    @Html.ValidationSummary(true)
+
+
+<form method="post">
+
+    @ViewBag.sonuc
+
+    <div class="editor-label">
+        <p>Ad Soyad:</p>
+        @Html.TextBoxFor(model => model.adsoyad)
+        @Html.ValidationMessageFor(model => model.adsoyad)
+
+    </div>
+
+
+    <div class="editor-label">
+        <p>Doğum Tarihi:</p>
+        @Html.TextBoxFor(model => model.dogumtarihi)
+        @Html.ValidationMessageFor(model => model.dogumtarihi)
+    </div>
+
+    <div class="editor-label">
+        <p>Uyruk:</p>
+        @Html.TextBoxFor(model => model.uyruk)
+        @Html.ValidationMessageFor(model => model.uyruk)
+    </div>
+
+
+    <div class="editor-label">
+        <p>TC No:</p>
+        @Html.TextBoxFor(model => model.tc)
+        @Html.ValidationMessageFor(model => model.tc)
+    </div>
+
+
+    <div class="editor-label">
+        <p>Cinsiyet:</p>
+        @Html.TextBoxFor(model => model.cinsiyet)
+        @Html.ValidationMessageFor(model => model.cinsiyet)
+    </div>
+
+
+    <div class="editor-label">
+        <p>Mail:</p>
+        @Html.TextBoxFor(model => model.mail)
+        @Html.ValidationMessageFor(model => model.mail)
+    </div>
+
+
+    <div class="editor-label">
+        <p>Telefon:</p>
+        @Html.TextBoxFor(model => model.tel)
+        @Html.ValidationMessageFor(model => model.tel)
+    </div>
+
+
+    <div class="editor-label">
+        <p>Adres:</p>
+        @Html.TextBoxFor(model => model.adres)
+        @Html.ValidationMessageFor(model => model.adres)
+    </div>
+
+
+
+
+    <h2>OKUL BİLGİLERi</h2>
+
+    <div class="editor-label">
+        <p>Okul:</p>
+        @Html.TextBoxFor(model => model.okul)
+        @Html.ValidationMessageFor(model => model.okul)
+    </div>
+
+
+    <div class="editor-label">
+        <p>Bolüm:</p>
+        @Html.TextBoxFor(model => model.bolum)
+        @Html.ValidationMessageFor(model => model.bolum)
+    </div>
+
+
+    <div class="editor-label">
+        <p>Not Ortalama:</p>
+        @Html.TextBoxFor(model => model.notort)
+        @Html.ValidationMessageFor(model => model.notort)
+    </div>
+
+
+
+    <div class="editor-label">
+        <p>Staj zorunlu mu?:</p>
+        @Html.TextBoxFor(model => model.stajzorun)
+        @Html.ValidationMessageFor(model => model.stajzorun)
+    </div>
+
+
+
+    <div class="editor-label">
+        <p>Staj Türü:</p>
+        @Html.TextBoxFor(model => model.stajtur)
+        @Html.ValidationMessageFor(model => model.stajtur)
+    </div>
+
+
+
+    <div class="editor-label">
+        <p>Staj Süresi(iş günü):</p>
+        @Html.TextBoxFor(model => model.stajsure)
+        @Html.ValidationMessageFor(model => model.stajsure)
+    </div>
+
+
+
+    <div class="editor-label">
+        <p>Sigorta okul tarafından mı karşılanacak?:</p>
+        @Html.TextBoxFor(model => model.sgtrdurum)
+        @Html.ValidationMessageFor(model => model.sgtrdurum)
+    </div>
+
+
+
+
+    <h2>REFERANS BİLGİLERİ</h2>
+
+    <div class="editor-label">
+        <p>Referans var mı?:</p>
+        @Html.TextBoxFor(model => model.refvar)
+        @Html.ValidationMessageFor(model => model.refvar)
+    </div>
+
+
+    <div class="editor-label">
+        <p>Referans Ad Soyad:</p>
+        @Html.TextBoxFor(model => model.refadsoyad)
+        @Html.ValidationMessageFor(model => model.refadsoyad)
+    </div>
+
+
+
+    <div class="editor-label">
+        <p>Referans Bolüm:</p>
+        @Html.TextBoxFor(model => model.refbolum)
+        @Html.ValidationMessageFor(model => model.refbolum)
+    </div>
+
+
+    <div class="editor-label">
+        <p>Referans Mail:</p>
+        @Html.TextBoxFor(model => model.refmail)
+        @Html.ValidationMessageFor(model => model.refmail)
+    </div>
+
+
+    <div class="editor-label">
+        <p>Referans Cep Telefon:</p>
+        @Html.TextBoxFor(model => model.reftel)
+        @Html.ValidationMessageFor(model => model.reftel)
+    </div>
+
+    <div class="editor-label">
+
+        @Html.ValidationMessageFor(model => model.reftel)
+    </div>
+
+
+
+
+
+    <div class="submit-contact default-submit">
+        <input type="submit" value="GÖNDER" onclick="return confirm('Başvuru gönderilsin mi?');" />
+    </div>
+
+
+
+</form>
+
+}

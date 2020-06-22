@@ -1,0 +1,66 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+ <title>@ViewBag.Tittle</title>
+    <link href="~/Content/css/Style.css" rel="stylesheet" />
+ 
+    
+</head>
+<body>
+    
+<section id="container">
+
+       
+        
+    <header>
+        <a href="" target="_blank">
+            <div id=""></div>   <!-- id="logo"  -->
+        </a> 
+                  
+    </header>
+
+        
+   <nav>
+       <a href="/Home/Index">
+       
+           <div class="nav-item ">
+            <span>Ana Sayfa</span>
+        </div> 
+
+       </a>
+       
+       <a href="/Home/uye">
+        <div class="nav-item ">
+            <span>Giriş Yap</span>
+        </div> 
+        
+       </a>
+       
+
+       <a href="/Home/kisi">
+       <div class="nav-item "style="width:192px;border-right:0;">
+            <span>Başvuru Yap</span>
+        </div> 
+        </a>
+</nav>
+   
+         
+    <section id="content">
+           @RenderBody();         
+    </section>
+ 
+    <footer>
+        <small>2020 &copy;  | Tüm Hakları Saklıdır.</small>
+    </footer>
+
+ </section>
+      
+
+</body>
+
+</html>

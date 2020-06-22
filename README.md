@@ -1,2 +1,2 @@
 # trainee-transactions
- ASP.NET MVC Project
+ ASP.NET MVC Project.It has been made trainee transactions.
